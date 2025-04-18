@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./signup.css">
+</head>
+
+<style>
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  background-color: #27AE60; /* Dark background for the header */
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-2 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Aligns items to the left */
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  margin-right: 20px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #3bd87d; /* Hover effect */
+}
+</style>
+
+<body>
+  <header>
+    <div class="header-2">
+        <nav class="navbar">
+            <a href="./index.html">home</a>
+        </nav>
+    </div>
+  </header>
+    <div class="container" id="signup">
+      <h1 class="form-title">Register</h1>
+      <form  action="./index.html" id="signInForm">
+        <div class="input-group">
+           <i class="fas fa-user"></i>
+           <input type="text" name="fName" id="fName" placeholder="First Name" required>
+           <label for="fname">First Name</label>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" name="lName" id="lName" placeholder="Last Name" required>
+            <label for="lName">Last Name</label>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <label for="email">Email</label>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <label for="password">Password</label>
+        </div>
+       <input type="submit" class="btn" value="Sign Up" name="signUp">
+      </form>
+      <p class="or">
+        ----------or--------
+      </p>
+      <div class="icons">
+        <i class="fab fa-google"></i>
+        <i class="fab fa-facebook"></i>
+      </div>
+      <div class="links">
+        <p>Already Have Account ?</p>
+        <button id="signInButton"><a href="./in.html">Sign In</a></button>
+      </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./cartsss.css">
+
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <div class="header-1">
+
+        <a href="#" class="logo"> <i class="fas fa-book"></i> Book Point </a>
+
+        <form action="" class="search-form">
+            <input type="search" name="" placeholder="search here..." id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        <div class="icons">
+            <div id="search-btn" class="fas fa-search"></div>
+            <a href="#" class="fas fa-heart"></a>
+            <!-- <a href="#" class="fas fa-shopping-cart"></a> -->
+            <!-- <a href="#" class="fas fa-truck"></a> -->
+            <div id="cart-section-truck" class="fas fa-shopping-cart"></div>
+             <!-- <a href="./cart.html" class="fas fa-shopping-cart"></a> -->
+            <div id="login-btn" class="fas fa-user"></div>
+        </div>
+
+    </div>
+
+    <div class="header-2">
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#featured">featured</a>
+            <a href="#arrivals">arrivals</a>
+            <a href="#reviews">reviews</a>
+            <a href="#blogs">Latest Books</a>
+        </nav>
+        <nav class="navbar login-btn">
+            <a href="./in.html">login</a>
+            <a href="./signup.html">sign up</a>
+        </nav>
+    </div>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- bottom navbar  -->
+
+<nav class="bottom-navbar">
+    <a href="#home" class="fas fa-home"></a>
+    <a href="#featured" class="fas fa-list"></a>
+    <a href="#arrivals" class="fas fa-tags"></a>
+    <a href="#reviews" class="fas fa-comments"></a>
+    <a href="#blogs" class="fas fa-blog"></a>
+</nav>
+
+<!-- login form  -->
+
+<div class="login-form-container">
+
+    <div id="close-login-btn" class="fas fa-times"></div>
+    
+    <div class="profile-container">
+      <div class="profile-header">
+        <img src="" alt="" class="profile-pic" id="profilePic">
+        <input type="file" id="picUpload" accept="image/*" style="display: none;">
+        <div class="menu" id="picMenu">
+          <button id="updatePic">Update Picture</button>
+          <button id="deletePic">Delete Picture</button>
+        </div>
+        <div class="username">Nitish Kumar</div>
+      </div>
+  
+      <div class="activity-section">
+        <div class="activity">
+          <h3>Currently Reading</h3>
+          <!-- currently Reading books show -->
+        </div>
+        <div class="activity">
+          <h3>Books Ordered</h3>
+          <!-- Books ordered -->
+        </div>
+        <div class="activity">
+          <h3>Total Pages Read</h3>
+          <!-- Total pages read -->
+        </div>
+        <div class="activity">
+          <a href="./publishedBooks.html" target="_blank">
+            <h3>Published Books</h3>
+          </a>
+          <!-- published books -->
+        </div>
+  
+        <div style="text-align:center; margin-top: 20px;">
+          <a href="./previewbook.html" style="text-decoration: none;">
+            <button class="upload-btn">Upload Your Own Book</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+<!-- cart section starts here -->
+
+<div class="cart-form-container">
+    <div id="close-cart-btn" class="fas fa-times"></div>
+    <div class="cart-container">
+      <h1>🛒 Your Cart</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Cover</th>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Quantity</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+            <!-- add book to cart -->
+        </tbody>
+      </table>
+  
+      <div class="checkout">
+        <p class="total">Total: ₹</p>
+        <a href="./placeYourORDER.html" style="text-decoration: none;" target="_blank">
+            <button class="checkout-btn">Proceed to order</button>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- cart section endes here -->
+
+  
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="row">
+
+        <div class="content">
+            <h3>upto 75% off</h3>
+            <p>There is a good news for all of you, if you buy any book from our website then you will get 75% discount and also you will get free delivery.</p>
+            <a href="./shop.html" class="btn">shop now</a>
+        </div>
+
+        <div class="swiper books-slider">
+            <div class="swiper-wrapper">
+                <a href="#" class="swiper-slide"><img src="./image/book-1.png" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="./image/book-2.png" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="./image/book-3.png" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="./image/book-4.png" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="./image/book-5.png" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="./image/book-6.png" alt=""></a>
+            </div>
+            <img src="image/stand.png" class="stand" alt="">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- home section ense  -->
+
+<!-- icons section starts  -->
+
+<section class="icons-container">
+
+    <div class="icons">
+        <i class="fas fa-shipping-fast"></i>
+        <div class="content">
+            <h3>free shipping</h3>
+            <p>order over $100</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-lock"></i>
+        <div class="content">
+            <h3>secure payment</h3>
+            <p>100% secure payment</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-redo-alt"></i>
+        <div class="content">
+            <h3>easy returns</h3>
+            <p>10 days returns</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-headset"></i>
+        <div class="content">
+            <h3>24/7 support</h3>
+            <p>call us anytime</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- icons section ends -->
+
+<!-- featured section starts  -->
+
+<section class="featured" id="featured">
+  <h1 class="heading"><span>Featured Books</span></h1>
+
+  <div class="swiper featured-slider">
+    <!-- START: Updated Featured Books with <button> -->
+
+<div class="swiper-wrapper">
+
+  <div class="swiper-slide box">
+    <div class="icons"><a href="#" class="fas fa-search"></a><a href="#" class="fas fa-heart"></a><a href="#" class="fas fa-eye"></a></div>
+    <div class="image"><a href="./bookDetails/Ikigai.html"><img src="./image/ikigai.jpg" alt="Ikigai books"></a></div>
+    <div class="content">
+      <h3>Ikigai</h3>
+      <div class="price">₹399 <span>₹499</span></div>
+      <button class="btn add-to-cart" data-title="Ikigai" data-author="Héctor García and Francesc Miralles" data-img="./image/ikigai.jpg" data-qty="1" data-price="399">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="swiper-slide box">
+    <div class="icons"><a href="#" class="fas fa-search"></a><a href="#" class="fas fa-heart"></a><a href="#" class="fas fa-eye"></a></div>
+    <div class="image"><a href="./bookDetails/Rules_for_a_knight.html"><img src="./image/rules_for_a_knight.png" alt=""></a></div>
+    <div class="content">
+      <h3>Rules for a Knight</h3>
+      <div class="price">₹349 <span>₹449</span></div>
+      <button class="btn add-to-cart" data-title="Rules for a Knight" data-author="Ethan Hawke" data-img="./image/rules_for_a_knight.png" data-qty="1" data-price="349">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="swiper-slide box">
+    <div class="icons"><a href="#" class="fas fa-search"></a><a href="#" class="fas fa-heart"></a><a href="#" class="fas fa-eye"></a></div>
+    <div class="image"><img src="./image/book-3.png" alt=""></div>
+    <div class="content">
+      <h3>1984</h3>
+      <div class="price">₹299 <span>₹399</span></div>
+      <button class="btn add-to-cart" data-title="1984" data-author="George Orwell" data-img="./image/book-3.png" data-qty="1" data-price="299">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="swiper-slide box">
+    <div class="icons"><a href="#" class="fas fa-search"></a><a href="#" class="fas fa-heart"></a><a href="#" class="fas fa-eye"></a></div>
+    <div class="image"><img src="./image/book-4.png" alt=""></div>
+    <div class="content">
+      <h3>Harry Potter and the Sorcerer’s Stone</h3>
+      <div class="price">₹499 <span>₹599</span></div>
+      <button class="btn add-to-cart" data-title="Harry Potter and the Sorcerer’s Stone" data-author="J.K. Rowling" data-img="./image/book-4.png" data-qty="1" data-price="499">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="swiper-slide box">
+    <div class="icons"><a href="#" class="fas fa-search"></a><a href="#" class="fas fa-heart"></a><a href="#" class="fas fa-eye"></a></div>
+    <div class="image"><img src="./image/book-5.png" alt=""></div>
+    <div class="content">
+      <h3>The Lord of the Rings</h3>
+      <div class="price">₹450 <span>₹550</span></div>
+      <button class="btn add-to-cart" data-title="The Lord of the Rings" data-author="J.R.R. Tolkien" data-img="./image/book-5.png" data-qty="1" data-price="450">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="swiper-slide box">
+    <div class="icons"><a href="#" class="fas fa-search"></a><a href="#" class="fas fa-heart"></a><a href="#" class="fas fa-eye"></a></div>
+    <div class="image"><img src="./image/book-6.png" alt=""></div>
+    <div class="content">
+      <h3>Pride and Prejudice</h3>
+      <div class="price">₹320 <span>₹420</span></div>
+      <button class="btn add-to-cart" data-title="Pride and Prejudice" data-author="Jane Austen" data-img="./image/book-6.png" data-qty="1" data-price="320">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="swiper-slide box">
+    <div class="icons"><a href="#" class="fas fa-search"></a><a href="#" class="fas fa-heart"></a><a href="#" class="fas fa-eye"></a></div>
+    <div class="image"><img src="./image/book-7.png" alt=""></div>
+    <div class="content">
+      <h3>The Alchemist</h3>
+      <div class="price">₹280 <span>₹380</span></div>
+      <button class="btn add-to-cart" data-title="The Alchemist" data-author="Paulo Coelho" data-img="./image/book-7.png" data-qty="1" data-price="280">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="swiper-slide box">
+    <div class="icons"><a href="#" class="fas fa-search"></a><a href="#" class="fas fa-heart"></a><a href="#" class="fas fa-eye"></a></div>
+    <div class="image"><img src="./image/book-8.png" alt=""></div>
+    <div class="content">
+      <h3>The Catcher in the Rye</h3>
+      <div class="price">₹310 <span>₹410</span></div>
+      <button class="btn add-to-cart" data-title="The Catcher in the Rye" data-author="J.D. Salinger" data-img="./image/book-8.png" data-qty="1" data-price="310">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="swiper-slide box">
+    <div class="icons"><a href="#" class="fas fa-search"></a><a href="#" class="fas fa-heart"></a><a href="#" class="fas fa-eye"></a></div>
+    <div class="image"><img src="./image/book-9.png" alt=""></div>
+    <div class="content">
+      <h3>The Hobbit</h3>
+      <div class="price">₹400 <span>₹500</span></div>
+      <button class="btn add-to-cart" data-title="The Hobbit" data-author="J.R.R. Tolkien" data-img="./image/book-9.png" data-qty="1" data-price="400">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="swiper-slide box">
+    <div class="icons"><a href="#" class="fas fa-search"></a><a href="#" class="fas fa-heart"></a><a href="#" class="fas fa-eye"></a></div>
+    <div class="image"><img src="./image/book-10.png" alt=""></div>
+    <div class="content">
+      <h3>Crime and Punishment</h3>
+      <div class="price">₹370 <span>₹470</span></div>
+      <button class="btn add-to-cart" data-title="Crime and Punishment" data-author="Fyodor Dostoevsky" data-img="./image/book-10.png" data-qty="1" data-price="370">Add to Cart</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- END -->
+
+
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+  
+
+
+<!-- featured section ends -->
+
+<!-- newsletter section starts -->
+
+<section class="newsletter">
+
+    <form action="">
+        <h3>subscribe for latest updates</h3>
+        <input type="email" name="" placeholder="enter your email" id="" class="box">
+        <!-- <input type="submit" value="subscribe" class="btn"> -->
+        <button type="button" value="subscribe" class="btn" onclick="">Submit</button>
+    </form>
+
+</section>
+
+<!-- newsletter section ends -->
+
+<!-- arrivals section starts  -->
+
+<section class="arrivals" id="arrivals">
+
+    <h1 class="heading"> <span>New Arrivals</span> </h1>
+
+    <div class="swiper arrivals-slider">
+
+        <div class="swiper-wrapper">
+
+            <a href="#" class="swiper-slide box">
+                <div class="image">
+                    <img src="./image/book-1.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>The Silent Patient</h3>
+                    <div class="price">₹399 <span>₹499</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="swiper-slide box">
+                <div class="image">
+                    <img src="./image/book-2.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Atomic Habits</h3>
+                    <div class="price">₹349 <span>₹449</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="swiper-slide box">
+                <div class="image">
+                    <img src="./image/book-3.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Ikigai</h3>
+                    <div class="price">₹299 <span>₹399</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="swiper-slide box">
+                <div class="image">
+                    <img src="./image/book-4.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>The Psychology of Money</h3>
+                    <div class="price">₹450 <span>₹550</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="swiper-slide box">
+                <div class="image">
+                    <img src="./image/book-5.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Rich Dad Poor Dad</h3>
+                    <div class="price">₹320 <span>₹420</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="swiper arrivals-slider">
+
+        <div class="swiper-wrapper">
+
+            <a href="#" class="swiper-slide box">
+                <div class="image">
+                    <img src="./image/book-6.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>Think Like a Monk</h3>
+                    <div class="price">₹280 <span>₹380</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="swiper-slide box">
+                <div class="image">
+                    <img src="./image/book-7.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>The Subtle Art of Not Giving a F*ck</h3>
+                    <div class="price">₹310 <span>₹410</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="swiper-slide box">
+                <div class="image">
+                    <img src="./image/book-8.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>The 5 AM Club</h3>
+                    <div class="price">₹400 <span>₹500</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- arrivals section ends -->
+
+<!-- deal section starts  -->
+
+<section class="deal">
+
+    <div class="content">
+        <h3>deal of the day</h3>
+        <h1>upto 50% off</h1>
+        <p>Good news for you, if you buy any book on Saturday and Sunday you will get 50% off and also you will get free delivery.</p>
+        <a href="#" class="btn">shop now</a>
+    </div>
+
+    <div class="image">
+        <img src="image/deal-img.jpg" alt="">
+    </div>
+
+</section>
+
+<!-- deal section ends -->
+
+<!-- reviews section starts  -->
+
+<section class="reviews" id="reviews">
+
+    <h1 class="heading"> <span>client's reviews</span> </h1>
+
+    <div class="swiper reviews-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <img src="./image/" alt="">
+                <h3>Ayush</h3>
+                <p>The website is very good and responsive, all the books available in this website are original and very cheap, you can buy them comfortably. Payment can also be done easily.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="./image/" alt="">
+                <h3>Ankit</h3>
+                <p>The website is very good and responsive, all the books available in this website are original and very cheap, you can buy them comfortably. Payment can also be done easily.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="./image/ alt="">
+                <h3>Vikash</h3>
+                <p>The website is very good and responsive, all the books available in this website are original and very cheap, you can buy them comfortably. Payment can also be done easily.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <img src="./image/" alt="">
+                <h3>Kanhaiya</h3>
+                <p>The website is very good and responsive, all the books available in this website are original and very cheap, you can buy them comfortably. Payment can also be done easily.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="./image/" alt="">
+                <h3>Vivke</h3>
+                <p>The website is very good and responsive, all the books available in this website are original and very cheap, you can buy them comfortably. Payment can also be done easily.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    
+</section>
+
+<!-- reviews section ends -->
+
+<!-- blogs section starts  -->
+
+<section class="blogs" id="blogs">
+    <h1 class="section-title">📚 Latest Books Showcase</h1>
+    
+    <div class="container">
+      <!-- Book Template -->
+      <div class="book-card">
+        <img class="book-cover" src="https://tse1.mm.bing.net/th?id=OIP._eIhg14p_4Yk_wbSG5_80QHaL8&pid=Api" alt="Onyx Storm">
+        <div class="book-info">
+          <div class="author-info">
+            <img class="author-photo" src="https://upload.wikimedia.org/wikipedia/commons/5/59/Rebecca_Yarros_photo.jpg" alt="Rebecca Yarros">
+            <span class="author-name">Rebecca Yarros</span>
+          </div>
+          <h2 class="book-title">Onyx Storm</h2>
+          <p class="about"><strong>About:</strong> A fantasy novel continuing Violet Sorrengail's thrilling journey with dragons and political intrigue in "The Empyrean" series.</p>
+        </div>
+      </div>
+    
+      <!-- Book 2 -->
+      <div class="book-card">
+        <img class="book-cover" src="https://tse4.mm.bing.net/th?id=OIP.WUQF0pTwBZfB-3T7ZubOBgHaLH&pid=Api" alt="The Let Them Theory">
+        <div class="book-info">
+          <div class="author-info">
+            <img class="author-photo" src="https://upload.wikimedia.org/wikipedia/commons/2/25/Mel_Robbins.jpg" alt="Mel Robbins">
+            <span class="author-name">Mel Robbins</span>
+          </div>
+          <h2 class="book-title">The Let Them Theory</h2>
+          <p class="about"><strong>About:</strong> A self-help guide promoting emotional freedom by letting go of control and focusing on personal growth.</p>
+        </div>
+      </div>
+    
+      <!-- Book 3 -->
+      <div class="book-card">
+        <img class="book-cover" src="https://tse3.mm.bing.net/th?id=OIP.ns680bXIuSvZVdz6D_r0sQHaLH&pid=Api" alt="Broken Country">
+        <div class="book-info">
+          <div class="author-info">
+            <img class="author-photo" src="https://via.placeholder.com/60" alt="Clare Leslie Hall">
+            <span class="author-name">Clare Leslie Hall</span>
+          </div>
+          <h2 class="book-title">Broken Country</h2>
+          <p class="about"><strong>About:</strong> A gripping tale of survival and resilience in a war-torn land, exploring human strength and hope.</p>
+        </div>
+      </div>
+    
+      <!-- Book 4 -->
+     <div class="book-section">
+        <img class="book-cover" src="https://tse2.mm.bing.net/th?id=OIP.TX6HCQPOTGJb30XQipMokQHaLc&pid=Api" alt="Heat of the Everflame Book Cover">
+        <div>
+            <div class="author-info">
+                <img class="author-photo" src="https://via.placeholder.com/60" alt="Penn Cole">
+                <strong>Author: Penn Cole</strong>
+            </div>
+            <h1>Heat of the Everflame</h1>
+            <div class="about">
+                <p><strong>About:</strong> An epic fantasy filled with ancient magic, prophecies, and a hero's quest to shape the future.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Book 5 -->
+    <div class="book-section">
+        <img class="book-cover" src="https://tse2.mm.bing.net/th?id=OIP.QP7L-nTeSujuNp9QprvxUAAAAA&pid=Api" alt="James Book Cover">
+        <div>
+            <div class="author-info">
+                <img class="author-photo" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Percival_Everett.jpg" alt="Percival Everett">
+                <strong>Author: Percival Everett</strong>
+            </div>
+            <h1>James</h1>
+            <div class="about">
+                <p><strong>About:</strong> A reimagining of "Huckleberry Finn" from Jim’s perspective, exploring race, freedom, and history.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Book 6 -->
+    <div class="book-section">
+        <img class="book-cover" src="https://tse2.mm.bing.net/th?id=OIP.QWSVx_siZLv-rp4n5tpBTQAAAA&pid=Api" alt="The Gate of the Feral Gods Book Cover">
+        <div>
+            <div class="author-info">
+                <img class="author-photo" src="https://via.placeholder.com/60" alt="Matt Dinniman">
+                <strong>Author: Matt Dinniman</strong>
+            </div>
+            <h1>The Gate of the Feral Gods</h1>
+            <div class="about">
+                <p><strong>About:</strong> An action-packed dungeon fantasy filled with humor, monsters, and quirky gods.</p>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+    
+
+</section>
+
+<!-- blogs section ends -->
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>our locations</h3>
+            <a href="https://maps.app.goo.gl/64PsDpGGSWSS37Lk6" target="_blank"> <i class="fas fa-map-marker-alt"></i> india </a>
+            <!-- <a href="#"> <i class="fas fa-map-marker-alt"></i> Nepal </a> -->
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> featured </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> arrivals </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> reviews </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> blogs </a>
+        </div>
+
+        <div class="box">
+            <h3>extra links</h3>
+            <a href="#"> <i class="fas fa-arrow-right"></i> account info </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> ordered items </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> privacy policy </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> payment method </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> our serivces </a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> +91 8002543444 </a>
+            <a href="#"> <i class="fas fa-phone"></i> +91 7258888230 </a>
+            <a href="#"> <i class="fas fa-envelope"></i> pnnitish88725@gmail.com </a>
+            <img src="image/worldmap.png" class="map" alt="">
+        </div>
+        
+    </div>
+
+    <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="https://www.linkedin.com/in/kr-nitish77/" class="fab fa-linkedin"></a>
+    </div>
+</section>
+
+<!-- footer section ends -->
+
+<!-- loader  -->
+
+<!-- <div class="loader-container">
+    <img src="./image/loader-img.gif" alt="">
+</div> -->
+
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="./script.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Function to load cart into the cart section
+    function loadCart() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const tbody = document.querySelector(".cart-container table tbody");
+  const totalDisplay = document.querySelector(".total");
+  tbody.innerHTML = "";
+
+  let total = 0;
+
+  cart.forEach((book) => {
+    total += book.price * book.qty;
+
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td data-label="Cover"><img class="book-cover" src="${book.img}" alt="${book.title}"></td>
+      <td data-label="Book Title">${book.title}</td>
+      <td data-label="Author">${book.author}</td>
+      <td data-label="Quantity">${book.qty}</td>
+      <td data-label="Remove">
+        <button class="remove-btn" data-title="${book.title}">Remove</button>
+      </td>
+    `;
+    tbody.appendChild(row);
+  });
+
+  // ✅ Show total
+  totalDisplay.textContent = `Total: ₹${total}`;
+}
+
+    // Handle Add to Cart click
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+      button.addEventListener("click", function (e) {
+        e.preventDefault(); // stop default anchor behavior (important!)
+
+        const title = this.dataset.title;
+        const author = this.dataset.author;
+        const img = this.dataset.img;
+        const price = parseFloat(this.dataset.price);
+        const qty = parseInt(this.dataset.qty);
+
+        const book = { title, author, img, price, qty };
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const existing = cart.find(item => item.title === title);
+        if (existing) {
+          existing.qty += qty;
+        } else {
+          cart.push(book);
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert(`✅ "${title}" added to cart!`);
+        // window.location.href = "cart.html";
+
+        loadCart();
+      });
+    });
+
+    // Initial load
+    loadCart();
+    // Handle Remove button clicks
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("remove-btn")) {
+    const titleToRemove = e.target.dataset.title;
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart = cart.map(item => {
+      if (item.title === titleToRemove) {
+        if (item.qty > 1) {
+          item.qty -= 1;
+          // alert(`➖ Reduced quantity of "${item.title}"`);
+          return item;
+        } else {
+          // alert(`❌ Removed "${item.title}" from cart`);
+          return null; // mark for removal
+        }
+      }
+      return item;
+    }).filter(item => item !== null);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCart();
+  }
+});
+
+  });
+
+
+//   const profile = document.querySelector(".profile-container");
+//   const loginbtn = document.querySelector(".login-btn");
+
+// if (profile && loginbtn) {
+//   loginbtn.style.display = "none";
+// }
+  
+
+// user-profile js
+const profilePic = document.getElementById("profilePic");
+const picUpload = document.getElementById("picUpload");
+const picMenu = document.getElementById("picMenu");
+
+// Load image from localStorage if available
+const storedPic = localStorage.getItem("profilePic");
+if (storedPic) {
+  profilePic.src = storedPic;
+}
+
+// Fallback image if not loaded
+profilePic.onerror = () => {
+  profilePic.src = "https://via.placeholder.com/120x120?text=User";
+};
+
+// Show/Hide menu
+profilePic.addEventListener("click", (e) => {
+  e.stopPropagation();
+  picMenu.style.display = picMenu.style.display === "flex" ? "none" : "flex";
+});
+
+// Hide menu when clicking outside
+document.addEventListener("click", () => {
+  picMenu.style.display = "none";
+});
+
+// Update profile picture
+document.getElementById("updatePic").addEventListener("click", () => {
+  picUpload.click();
+});
+
+picUpload.addEventListener("change", function () {
+  const file = this.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      profilePic.src = e.target.result;
+      localStorage.setItem("profilePic", e.target.result);
+    };
+    reader.readAsDataURL(file);
+  }
+});
+
+// Delete profile picture
+document.getElementById("deletePic").addEventListener("click", () => {
+  profilePic.src = "https://via.placeholder.com/120x120?text=User";
+  localStorage.removeItem("profilePic");
+});
+
+
+  
+</script>
+
+
+
+
+</body>
+</html>

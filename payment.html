@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: #4CAF50;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .header-2 {
+      padding: 12px 30px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links,
+    .nav-auth {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    .nav-links li a,
+    .nav-auth li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-links li a:hover,
+    .nav-auth li a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Padding so content is not hidden behind the fixed header */
+    .main-content {
+      padding-top: 80px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .main-content h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: #333;
+    }
+
+    .main-content p {
+      text-align: center;
+      margin-top: 10px;
+      color: #666;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .payment-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .total-amount {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .payment-methods {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    .payment-methods div {
+      padding: 12px;
+      background-color: #f7f7f7;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 120px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .payment-methods div:hover {
+      background-color: #0073e6;
+      color: white;
+    }
+
+    .payment-methods img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .pay-button {
+      background-color: #2ecc71;
+      color: white;
+      padding: 12px 20px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      width: 100%;
+    }
+
+    .pay-button:hover {
+      background-color: #27ae60;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-2">
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="./index.html">Home</a></li>
+          <!-- <li><a href="#">Featured</a></li>
+          <li><a href="#">Arrivals</a></li>
+          <li><a href="#">Reviews</a></li>
+          <li><a href="#">Latest Books</a></li> -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="payment-container">
+    <h1>Payment Page</h1>
+
+    <!-- Display total amount from localStorage -->
+    <div class="total-amount">
+      Total Amount: ₹<span id="total-amount">0</span>
+    </div>
+
+    <div class="payment-methods">
+      <div onclick="selectPaymentMethod('upi')">
+        <img src="" alt="UPI" />
+        <p>UPI</p>
+      </div>
+      <div onclick="selectPaymentMethod('cards')">
+        <img src="" alt="Credit/Debit Cards" />
+        <p>Cards</p>
+      </div>
+      <div onclick="selectPaymentMethod('wallet')">
+        <img src="" alt="Wallet" />
+        <p>Wallet</p>
+      </div>
+    </div>
+
+    <button class="pay-button" onclick="proceedToPayment()">Proceed to Payment</button>
+  </div>
+
+  <script>
+    // Fetch the total amount from localStorage
+    let totalAmount =0;
+    // console.log(localStorage);
+    const carts = JSON.parse(localStorage.getItem("cart"));
+    carts.forEach(element => {
+        console.log(element.price);
+        totalAmount += element.price;
+    });
+    document.getElementById("total-amount").textContent = totalAmount;
+
+    function selectPaymentMethod(method) {
+      alert(`You have selected ${method} payment method.`);
+    }
+
+    function proceedToPayment() {
+      if (!totalAmount || totalAmount === "0") {
+        alert('There is no amount to pay.');
+      } else {
+        alert(`Proceeding with payment of ₹${totalAmount}`);
+      }
+    }
+  </script>
+
+</body>
+</html>

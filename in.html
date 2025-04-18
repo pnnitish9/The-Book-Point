@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./signup.css">
+    <title>Login</title>
+</head>
+<style>
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  background-color: #27AE60; /* Dark background for the header */
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-2 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Aligns items to the left */
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  margin-right: 20px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #3bd87d; /* Hover effect */
+}
+
+</style>
+
+<body>
+  <header>
+    <div class="header-2">
+        <nav class="navbar">
+            <a href="./index.html">home</a>
+        </nav>
+    </div>
+  </header>
+
+    <div class="container" id="signIn">
+        <h1 class="form-title">Sign In</h1>
+        <form  action="index.html" id="signInForm">
+          <div class="input-group">
+              <i class="fas fa-envelope"></i>
+              <input type="email" name="email" id="email" placeholder="Email" required>
+              <label for="email">Email</label>
+          </div>
+          <div class="input-group">
+              <i class="fas fa-lock"></i>
+              <input type="password" name="password" id="password" placeholder="Password" required>
+              <label for="password">Password</label>
+          </div>
+          <p class="recover">
+            <a href="#">Recover Password</a>
+          </p>
+         <input type="submit" class="btn" value="Sign In" name="signIn">
+        </form>
+        <p class="or">
+          ----------or--------
+        </p>
+        <div class="icons">
+          <i class="fab fa-google"></i>
+          <i class="fab fa-facebook"></i>
+        </div>
+        <div class="links">
+          <p>Don't have account yet?</p>
+          <button id="signUpButton"><a href="./signup.html">Sign Up</a></button>
+        </div>
+      </div>
+</body>
+</html>

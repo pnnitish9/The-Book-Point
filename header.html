@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Store Header</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: #4CAF50;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .header-2 {
+      padding: 12px 30px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links,
+    .nav-auth {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    .nav-links li a,
+    .nav-auth li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-links li a:hover,
+    .nav-auth li a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Padding so content is not hidden behind the fixed header */
+    .main-content {
+      padding-top: 80px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .main-content h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: #333;
+    }
+
+    .main-content p {
+      text-align: center;
+      margin-top: 10px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-2">
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="./index.html">Home</a></li>
+          <!-- <li><a href="#">Featured</a></li>
+          <li><a href="#">Arrivals</a></li>
+          <li><a href="#">Reviews</a></li>
+          <li><a href="#">Latest Books</a></li> -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+</body>
+</html>

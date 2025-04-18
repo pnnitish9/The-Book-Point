@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Published Books</title>
+  <style>
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: #4CAF50;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .header-2 {
+      padding: 12px 30px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links,
+    .nav-auth {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    .nav-links li a,
+    .nav-auth li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-links li a:hover,
+    .nav-auth li a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Padding so content is not hidden behind the fixed header */
+    .main-content {
+      padding-top: 80px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .main-content h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: #333;
+    }
+
+    .main-content p {
+      text-align: center;
+      margin-top: 10px;
+      color: #666;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .books-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .book-card {
+      background: white;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    .book-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .book-details {
+      margin-top: 10px;
+    }
+    .book-details h3 {
+      margin: 0;
+      color: #333;
+    }
+    .book-details p {
+      margin: 5px 0;
+      color: #555;
+      font-size: 0.95rem;
+    }
+    .view-pdf-button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .view-pdf-button:hover {
+      background-color: #218838;
+    }
+    .delete-button, .edit-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: red;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 10;
+    }
+    .edit-button {
+      background-color: #007bff;
+      right: 70px; /* Edit button is slightly to the left of Delete button */
+    }
+    .delete-button:hover, .edit-button:hover {
+      background-color: darkred;
+    }
+    .edit-form-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+    }
+    .edit-form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 400px;
+    }
+    .edit-form input, .edit-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .edit-form button {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="header-2">
+          <nav class="navbar">
+            <ul class="nav-links">
+              <li><a href="./index.html">Home</a></li>
+              <!-- <li><a href="#">Featured</a></li>
+              <li><a href="#">Arrivals</a></li>
+              <li><a href="#">Reviews</a></li>
+              <li><a href="#">Latest Books</a></li> -->
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <br><br>
+
+  <h1>📚 Published Books</h1>
+  <div class="books-container" id="booksContainer">
+    <!-- Book cards will appear here -->
+  </div>
+
+  <!-- Edit Form Container -->
+  <div class="edit-form-container" id="editFormContainer">
+    <div class="edit-form">
+      <h3>Edit Book Details</h3>
+      <label for="edit-title">Title</label>
+      <input type="text" id="edit-title">
+      
+      <label for="edit-author">Author</label>
+      <input type="text" id="edit-author">
+      
+      <label for="edit-price">Price</label>
+      <input type="number" id="edit-price">
+      
+      <label for="edit-description">Description</label>
+      <textarea id="edit-description"></textarea>
+      
+      <!-- <label for="edit-cover">Cover Image</label>
+      <input type="file" id="edit-cover"> -->
+      
+      <button id="saveChangesButton">Save Changes</button>
+      <button id="cancelEditButton">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    const booksContainer = document.getElementById('booksContainer');
+    const uploadedBooks = JSON.parse(localStorage.getItem('uploadedBooks')) || [];
+    const editFormContainer = document.getElementById('editFormContainer');
+    const saveChangesButton = document.getElementById('saveChangesButton');
+    const cancelEditButton = document.getElementById('cancelEditButton');
+
+    let editBookIndex = null;
+
+    if (uploadedBooks.length === 0) {
+      booksContainer.innerHTML = "<p style='text-align:center; color: #777;'>No books uploaded yet.</p>";
+    } else {
+      uploadedBooks.forEach((book, index) => {
+        const card = document.createElement('div');
+        card.classList.add('book-card');
+
+        // Adding book details and View PDF button
+        card.innerHTML = `
+          <img src="${book.coverURL}" alt="${book.title} Cover">
+          <div class="book-details">
+            <h3>${book.title}</h3>
+            <p><strong>Author:</strong> ${book.author}</p>
+            <p><strong>Price:</strong> ₹${book.price}</p>
+            <p>${book.description}</p>
+            <button class="view-pdf-button" onclick="viewPdf('${book.pdfURL}')">View PDF</button>
+          </div>
+          <button class="delete-button" onclick="deleteBook(${index})">Delete</button>
+          <button class="edit-button" onclick="editBook(${index})">Edit</button>
+        `;
+        booksContainer.appendChild(card);
+      });
+    }
+
+    // Function to open PDF in a new tab
+    function viewPdf(pdfUrl) {
+      window.open(pdfUrl, '_blank');
+    }
+
+    // Function to delete a book from localStorage and the page
+    function deleteBook(index) {
+      let uploadedBooks = JSON.parse(localStorage.getItem('uploadedBooks')) || [];
+      uploadedBooks.splice(index, 1);
+      localStorage.setItem('uploadedBooks', JSON.stringify(uploadedBooks));
+      window.location.reload();
+    }
+
+    // Function to open the edit form with the book details
+    function editBook(index) {
+      editBookIndex = index;
+      const book = uploadedBooks[index];
+
+      // Set current book details into the edit form
+      document.getElementById('edit-title').value = book.title;
+      document.getElementById('edit-author').value = book.author;
+      document.getElementById('edit-price').value = book.price;
+      document.getElementById('edit-description').value = book.description;
+      // document.getElementById('edit-cover').value = ''; // Placeholder for new cover image
+
+      // Show the edit form
+      editFormContainer.style.visibility = 'visible';
+    }
+
+    // Function to save the changes
+    saveChangesButton.addEventListener('click', function() {
+      const title = document.getElementById('edit-title').value;
+      const author = document.getElementById('edit-author').value;
+      const price = document.getElementById('edit-price').value;
+      const description = document.getElementById('edit-description').value;
+      // const coverFile = document.getElementById('edit-cover').files[0];
+
+      // if (coverFile) {
+      //   const coverURL = URL.createObjectURL(coverFile);
+      //   uploadedBooks[editBookIndex].coverURL = coverURL;
+      // }
+
+      uploadedBooks[editBookIndex].title = title;
+      uploadedBooks[editBookIndex].author = author;
+      uploadedBooks[editBookIndex].price = price;
+      uploadedBooks[editBookIndex].description = description;
+
+      localStorage.setItem('uploadedBooks', JSON.stringify(uploadedBooks));
+
+      // Hide the edit form and reload the page to reflect the changes
+      editFormContainer.style.visibility = 'hidden';
+      window.location.reload();
+    });
+
+    // Cancel editing
+    cancelEditButton.addEventListener('click', function() {
+      editFormContainer.style.visibility = 'hidden';
+    });
+  </script>
+
+</body>
+</html>

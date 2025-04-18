@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview and Upload Book</title>
+    <style>
+            * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: #4CAF50;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .header-2 {
+      padding: 12px 30px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links,
+    .nav-auth {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    .nav-links li a,
+    .nav-auth li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-links li a:hover,
+    .nav-auth li a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Padding so content is not hidden behind the fixed header */
+    .main-content {
+      padding-top: 80px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .main-content h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: #333;
+    }
+
+    .main-content p {
+      text-align: center;
+      margin-top: 10px;
+      color: #666;
+    }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+        .preview-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"], input[type="file"], textarea {
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+        textarea {
+            resize: vertical;
+        }
+        .pdf-preview {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            height: 400px;
+        }
+        #pdf-viewer {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        button {
+            margin-top: 20px;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-2">
+          <nav class="navbar">
+            <ul class="nav-links">
+              <li><a href="./index.html">Home</a></li>
+              <!-- <li><a href="#">Featured</a></li>
+              <li><a href="#">Arrivals</a></li>
+              <li><a href="#">Reviews</a></li>
+              <li><a href="#">Latest Books</a></li> -->
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+<div class="preview-container">
+    <h2>Preview and Upload Your Book</h2>
+
+    <form id="bookForm" >
+        <label for="pdf-file">Select PDF File:</label>
+        <input type="file" id="pdf-file" accept="application/pdf" required>
+
+        <div class="pdf-preview" id="pdf-preview">
+            <iframe id="pdf-viewer"></iframe>
+        </div>
+
+        <label for="title">Book Title:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="author">Author Name:</label>
+        <input type="text" id="author" name="author" required>
+
+        <label for="price">Price (Rupees):</label>
+        <input type="number" id="price" name="price" step="0.01" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4"></textarea>
+
+        <label for="cover">Upload Cover Picture:</label>
+        <input type="file" id="cover" accept="image/*" required>
+
+        <button type="submit">Upload Book</button>
+    </form>
+</div>
+
+<script>
+  const pdfFileInput = document.getElementById('pdf-file');
+  const pdfViewer = document.getElementById('pdf-viewer');
+
+  // Preview the selected PDF file
+  pdfFileInput.addEventListener('change', function () {
+      const file = this.files[0];
+      if (file && file.type === "application/pdf") {
+          const fileURL = URL.createObjectURL(file);
+          pdfViewer.src = fileURL;
+      } else {
+          pdfViewer.src = "";
+          alert("Please upload a valid PDF file.");
+      }
+  });
+
+  // Handle form submission
+  document.getElementById('bookForm').addEventListener('submit', function (event) {
+      event.preventDefault();  // Prevent form from refreshing the page
+
+      // Get the form data
+      const title = document.getElementById('title').value;
+      const author = document.getElementById('author').value;
+      const price = document.getElementById('price').value;
+      const description = document.getElementById('description').value;
+
+      const pdfFile = document.getElementById('pdf-file').files[0];
+      const coverFile = document.getElementById('cover').files[0];
+
+      if (pdfFile && coverFile) {
+          // Save the book details to localStorage
+          const bookData = {
+              title: title,
+              author: author,
+              price: price,
+              description: description,
+              pdfURL: URL.createObjectURL(pdfFile),
+              coverURL: URL.createObjectURL(coverFile)
+          };
+
+          let uploadedBooks = JSON.parse(localStorage.getItem('uploadedBooks')) || [];
+          uploadedBooks.push(bookData);
+          localStorage.setItem('uploadedBooks', JSON.stringify(uploadedBooks));
+
+          alert("Book uploaded successfully");
+
+          // Reset the form inputs
+          document.getElementById('bookForm').reset();
+          pdfViewer.src = ""; // Clear the PDF preview
+      } else {
+          alert('Please upload both the PDF and cover image.');
+      }
+  });
+</script>
+
+
+</body>
+</html>

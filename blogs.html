@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Latest Books Showcase</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1.section-title {
+      text-align: center;
+      margin: 30px 0;
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .book-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .book-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+
+    .book-cover {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .book-info {
+      padding: 15px;
+    }
+
+    .author-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .author-photo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+      border: 2px solid #ddd;
+    }
+
+    .author-name {
+      font-weight: bold;
+      color: #444;
+    }
+
+    .book-title {
+      font-size: 1.2rem;
+      margin: 10px 0;
+      color: #222;
+    }
+
+    .about {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<h1 class="section-title">📚 Latest Books Showcase</h1>
+
+<div class="container">
+  <!-- Book Template -->
+  <div class="book-card">
+    <img class="book-cover" src="https://tse1.mm.bing.net/th?id=OIP._eIhg14p_4Yk_wbSG5_80QHaL8&pid=Api" alt="Onyx Storm">
+    <div class="book-info">
+      <div class="author-info">
+        <img class="author-photo" src="https://upload.wikimedia.org/wikipedia/commons/5/59/Rebecca_Yarros_photo.jpg" alt="Rebecca Yarros">
+        <span class="author-name">Rebecca Yarros</span>
+      </div>
+      <h2 class="book-title">Onyx Storm</h2>
+      <p class="about"><strong>About:</strong> A fantasy novel continuing Violet Sorrengail's thrilling journey with dragons and political intrigue in "The Empyrean" series.</p>
+    </div>
+  </div>
+
+  <!-- Book 2 -->
+  <div class="book-card">
+    <img class="book-cover" src="https://tse4.mm.bing.net/th?id=OIP.WUQF0pTwBZfB-3T7ZubOBgHaLH&pid=Api" alt="The Let Them Theory">
+    <div class="book-info">
+      <div class="author-info">
+        <img class="author-photo" src="https://upload.wikimedia.org/wikipedia/commons/2/25/Mel_Robbins.jpg" alt="Mel Robbins">
+        <span class="author-name">Mel Robbins</span>
+      </div>
+      <h2 class="book-title">The Let Them Theory</h2>
+      <p class="about"><strong>About:</strong> A self-help guide promoting emotional freedom by letting go of control and focusing on personal growth.</p>
+    </div>
+  </div>
+
+  <!-- Book 3 -->
+  <div class="book-card">
+    <img class="book-cover" src="https://tse3.mm.bing.net/th?id=OIP.ns680bXIuSvZVdz6D_r0sQHaLH&pid=Api" alt="Broken Country">
+    <div class="book-info">
+      <div class="author-info">
+        <img class="author-photo" src="https://via.placeholder.com/60" alt="Clare Leslie Hall">
+        <span class="author-name">Clare Leslie Hall</span>
+      </div>
+      <h2 class="book-title">Broken Country</h2>
+      <p class="about"><strong>About:</strong> A gripping tale of survival and resilience in a war-torn land, exploring human strength and hope.</p>
+    </div>
+  </div>
+
+  <!-- Book 4 -->
+ <div class="book-section">
+    <img class="book-cover" src="https://tse2.mm.bing.net/th?id=OIP.TX6HCQPOTGJb30XQipMokQHaLc&pid=Api" alt="Heat of the Everflame Book Cover">
+    <div>
+        <div class="author-info">
+            <img class="author-photo" src="https://via.placeholder.com/60" alt="Penn Cole">
+            <strong>Author: Penn Cole</strong>
+        </div>
+        <h1>Heat of the Everflame</h1>
+        <div class="about">
+            <p><strong>About:</strong> An epic fantasy filled with ancient magic, prophecies, and a hero's quest to shape the future.</p>
+        </div>
+    </div>
+</div>
+<!-- Book 5 -->
+<div class="book-section">
+    <img class="book-cover" src="https://tse2.mm.bing.net/th?id=OIP.QP7L-nTeSujuNp9QprvxUAAAAA&pid=Api" alt="James Book Cover">
+    <div>
+        <div class="author-info">
+            <img class="author-photo" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Percival_Everett.jpg" alt="Percival Everett">
+            <strong>Author: Percival Everett</strong>
+        </div>
+        <h1>James</h1>
+        <div class="about">
+            <p><strong>About:</strong> A reimagining of "Huckleberry Finn" from Jim’s perspective, exploring race, freedom, and history.</p>
+        </div>
+    </div>
+</div>
+<!-- Book 6 -->
+<div class="book-section">
+    <img class="book-cover" src="https://tse2.mm.bing.net/th?id=OIP.QWSVx_siZLv-rp4n5tpBTQAAAA&pid=Api" alt="The Gate of the Feral Gods Book Cover">
+    <div>
+        <div class="author-info">
+            <img class="author-photo" src="https://via.placeholder.com/60" alt="Matt Dinniman">
+            <strong>Author: Matt Dinniman</strong>
+        </div>
+        <h1>The Gate of the Feral Gods</h1>
+        <div class="about">
+            <p><strong>About:</strong> An action-packed dungeon fantasy filled with humor, monsters, and quirky gods.</p>
+        </div>
+    </div>
+</div>
+
+</div>
+
+</body>
+</html>
